@@ -2,6 +2,7 @@
   "name": "@smart-mirror/backend",
   "version": "0.0.0",
   "main": "src/app.ts",
+  "private": true,
   "scripts": {
     "start": "tsx src/app.ts",
     "format:check": "prettier --check src",
@@ -9,6 +10,7 @@
   },
   "packageManager": "pnpm@10.19.0",
   "devDependencies": {
+    "@prettier/plugin-oxc": "catalog:",
     "@tsconfig/node24": "catalog:",
     "@types/node": "catalog:",
     "oxlint": "catalog:",

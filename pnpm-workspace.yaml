@@ -3,9 +3,16 @@ packages:
   - libs/*
 
 catalog:
-  "@tsconfig/node24": "^24.0.3"
-  "@types/node": ^22.13.4
-  "oxlint": ^1.0.0
-  "prettier": ^3.5.1
+  "@prettier/plugin-oxc": ^0.0.5
+  "@tsconfig/node24": ^24.0.3
+  "@types/node": ^24.10.1
+  "@vitest/eslint-plugin": ^1.5.0
+  "eslint": ^9.39.1
+  "eslint-plugin-oxlint": "~1.29.0"
+  "jiti": ^2.6.1
+  "npm-run-all2": ^8.0.4
+  "oxlint": "~1.29.0"
+  "prettier": ^3.6.2
   "tsx": ^4.2.0
   "typescript": ^5.9.0
+  "vitest": ^4.0.14

@@ -12,6 +12,7 @@
     "format:fix": "pnpm run -r format:fix"
   },
   "devDependencies": {
+    "@prettier/plugin-oxc": "catalog:",
     "oxlint": "catalog:",
     "prettier": "catalog:",
     "typescript": "catalog:"

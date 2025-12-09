@@ -1,0 +1,51 @@
+{
+  "name": "@smart-mirror/frontend",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "run-p type-check \"build-only {@}\" --",
+    "preview": "vite preview",
+    "test:unit": "vitest",
+    "build-only": "vite build",
+    "type-check": "vue-tsc --build",
+    "lint:oxlint": "oxlint . --fix -D correctness --ignore-path .gitignore",
+    "lint:eslint": "eslint . --fix --cache",
+    "lint": "run-s lint:*",
+    "format:check": "prettier --check --experimental-cli src/",
+    "format:fix": "prettier --write --experimental-cli src/"
+  },
+  "dependencies": {
+    "pinia": "^3.0.4",
+    "vue": "^3.5.25"
+  },
+  "devDependencies": {
+    "@prettier/plugin-oxc": "catalog:",
+    "@tsconfig/node24": "catalog:",
+    "@types/jsdom": "^27.0.0",
+    "@types/node": "catalog:",
+    "@vitejs/plugin-vue": "^6.0.2",
+    "@vitest/eslint-plugin": "catalog:",
+    "@vue/eslint-config-prettier": "^10.2.0",
+    "@vue/eslint-config-typescript": "^14.6.0",
+    "@vue/test-utils": "^2.4.6",
+    "@vue/tsconfig": "^0.8.1",
+    "eslint": "catalog:",
+    "eslint-plugin-oxlint": "catalog:",
+    "eslint-plugin-vue": "~10.5.1",
+    "jiti": "catalog:",
+    "jsdom": "^27.2.0",
+    "npm-run-all2": "catalog:",
+    "oxlint": "catalog:",
+    "prettier": "catalog:",
+    "typescript": "catalog:",
+    "vite": "^7.2.4",
+    "vite-plugin-vue-devtools": "^8.0.5",
+    "vitest": "catalog:",
+    "vue-tsc": "^3.1.5" 
+  }
+}
