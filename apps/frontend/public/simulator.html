@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <title>Smart Mirror Simulator</title>
+
         <style>
             * {
                 box-sizing: border-box;
@@ -29,7 +31,6 @@
                 width: 1440px;
                 height: 3440px;
                 border: 4px solid white;
-                background: black;
                 transform-origin: center center;
                 transform: scale(var(--scale, 1));
             }
@@ -37,6 +38,7 @@
             #frame > iframe {
                 width: 100%;
                 height: 100%;
+                border: none;
             }
 
             .hidden {

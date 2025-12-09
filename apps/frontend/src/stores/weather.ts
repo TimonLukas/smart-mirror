@@ -3,7 +3,7 @@ import { type LocationModel, WeatherDataModel } from '@smart-mirror/lib-api'
 import { logger, sleep } from '@smart-mirror/lib-common'
 import { useIntervalFn } from '@vueuse/core'
 import { defineStore } from 'pinia'
-import { reactive, ref } from 'vue'
+import { computed, reactive, ref } from 'vue'
 
 export const useWeatherStore = defineStore('weather', () => {
   const locations = ref<LocationModel[]>([
@@ -11,16 +11,24 @@ export const useWeatherStore = defineStore('weather', () => {
       id: 'attendorn',
       label: 'Attendorn',
       coordinates: {
-        latitude: 51.1313927,
-        longitude: 7.9049443,
+        latitude: 51.1250541,
+        longitude: 7.9010992,
       },
     },
     {
       id: 'dieringhausen',
       label: 'Dieringhausen',
       coordinates: {
-        latitude: 50.9829226,
-        longitude: 7.5268819,
+        latitude: 50.9885393,
+        longitude: 7.5026416,
+      },
+    },
+    {
+      id: 'muenchen',
+      label: 'München',
+      coordinates: {
+        latitude: 48.09260177612305,
+        longitude: 11.5301513671875,
       },
     },
   ])
@@ -68,5 +76,13 @@ export const useWeatherStore = defineStore('weather', () => {
     },
   )
 
-  return { weather, addLocation, fetch, pause, resume, isActive }
+  return {
+    weather,
+    addLocation,
+    fetch,
+    pause,
+    resume,
+    isActive,
+    locations: computed(() => locations.value),
+  }
 })

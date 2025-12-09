@@ -1,15 +1,19 @@
 import { fileURLToPath, URL } from 'node:url'
 
 import { defineConfig, Plugin } from 'vite'
-import vue from '@vitejs/plugin-vue'
-import vueDevTools from 'vite-plugin-vue-devtools'
+import pluginVue from '@vitejs/plugin-vue'
+import pluginVueDevTools from 'vite-plugin-vue-devtools'
+import pluginTailwindcss from '@tailwindcss/vite'
+import pluginTsconfigPaths from "vite-tsconfig-paths"
 
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
-    vue(),
-    vueDevTools(),
+    pluginVue(),
+    pluginVueDevTools(),
     pluginCustomGreetingUrl(),
+    pluginTailwindcss(),
+    pluginTsconfigPaths(),
   ],
   resolve: {
     alias: {
