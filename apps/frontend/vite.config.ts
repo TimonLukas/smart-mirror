@@ -1,6 +1,6 @@
 import { fileURLToPath, URL } from 'node:url'
 
-import { defineConfig } from 'vite'
+import { defineConfig, Plugin } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueDevTools from 'vite-plugin-vue-devtools'
 
@@ -9,6 +9,7 @@ export default defineConfig({
   plugins: [
     vue(),
     vueDevTools(),
+    pluginCustomGreetingUrl(),
   ],
   resolve: {
     alias: {
@@ -16,3 +17,16 @@ export default defineConfig({
     },
   },
 })
+
+function pluginCustomGreetingUrl(): Plugin {
+  return {
+    name: "custom-greeting-url",
+    configureServer(server) {
+      const printUrls = server.printUrls
+      server.printUrls = () => {
+        server.resolvedUrls?.local.push('http://localhost:5173/simulator.html')
+        printUrls()
+      }
+    }
+  }
+}

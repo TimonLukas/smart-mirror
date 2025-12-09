@@ -1,2 +1,6 @@
 export * from './array/index'
+export * as assert from './assert/index'
+export * from './cache/index'
 export { logger } from './logger/index'
+export * from './promise/index'
+export * from './polyfill/index'

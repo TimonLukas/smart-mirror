@@ -5,15 +5,17 @@
   "type": "module",
   "scripts": {
     "format:check": "prettier --check src",
-    "format:fix": "prettier --check --write src"
+    "format:fix": "prettier --check --write src",
+    "test": "vitest"
   },
   "dependencies": {
-    "consola": "catalog:"
+    "consola": "catalog:",
+    "temporal-polyfill": "^0.3.0"
   },
   "devDependencies": {
     "@prettier/plugin-oxc": "catalog:",
     "@smart-mirror/lib-tsconfig": "workspace:",
-    "@tsconfig/node24": "catalog:",
+    "@types/node": "catalog:",
     "oxlint": "catalog:",
     "prettier": "catalog:",
     "typescript": "catalog:",

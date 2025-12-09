@@ -1,0 +1,1 @@
+export { cacheResults } from './cache'

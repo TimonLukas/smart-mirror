@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "@trpc/client": "catalog:trpc",
+    "@vueuse/core": "^14.1.0",
     "pinia": "^3.0.4",
     "vue": "^3.5.25"
   },

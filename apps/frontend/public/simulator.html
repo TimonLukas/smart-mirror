@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+
+            html {
+                background: #444;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                width: 100vw;
+                height: 100vh;
+            }
+
+            #container {
+                max-width: 95vw;
+                max-height: 95vh;
+                overflow: hidden;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            #frame {
+                width: 1440px;
+                height: 3440px;
+                border: 4px solid white;
+                background: black;
+                transform-origin: center center;
+                transform: scale(var(--scale, 1));
+            }
+
+            #frame > iframe {
+                width: 100%;
+                height: 100%;
+            }
+
+            .hidden {
+                visibility: hidden;
+            }
+        </style>
+
+        <script type="module">
+            const { container, frame } = window
+
+            const nextTick = () => new Promise((resolve) => setTimeout(resolve, 1))
+
+            async function updateFrameScale() {
+                frame.classList.add("hidden")
+                frame.style.setProperty("--scale", 1)
+                await nextTick()
+
+                const frameRect = frame.getBoundingClientRect()
+                const containerRect = container.getBoundingClientRect()
+
+                const widthScale = containerRect.width / frameRect.width
+                const heightScale = containerRect.height / frameRect.height
+
+                const scale = Math.min(widthScale, heightScale)
+                frame.style.setProperty("--scale", scale)
+                frame.classList.remove("hidden")
+            }
+
+            updateFrameScale()
+            window.addEventListener("resize", () => updateFrameScale())
+        </script>
+    </head>
+    <body>
+        <div id="container">
+            <div id="frame">
+                <iframe src="http://localhost:5173" />
+            </div>
+        </div>
+    </body>
+</html>
