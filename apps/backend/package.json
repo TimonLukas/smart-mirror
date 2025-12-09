@@ -1,0 +1,19 @@
+{
+  "name": "@smart-mirror/backend",
+  "version": "0.0.0",
+  "main": "src/app.ts",
+  "scripts": {
+    "start": "tsx src/app.ts",
+    "format:check": "prettier --check src",
+    "format:fix": "prettier --check --write src"
+  },
+  "packageManager": "pnpm@10.19.0",
+  "devDependencies": {
+    "@tsconfig/node24": "catalog:",
+    "@types/node": "catalog:",
+    "oxlint": "catalog:",
+    "prettier": "catalog:",
+    "tsx": "catalog:",
+    "typescript": "catalog:"
+  }
+}

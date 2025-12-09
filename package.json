@@ -1,0 +1,19 @@
+{
+  "name": "@smart-mirror/monorepo",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Frontend & Backend application for my Smart Mirror ",
+  "keywords": [],
+  "author": "Timon Lukas <smart-mirror@timonlukas.de>",
+  "license": "MIT",
+  "packageManager": "pnpm@10.19.0",
+  "scripts": {
+    "format:check": "pnpm run -r format:check",
+    "format:fix": "pnpm run -r format:fix"
+  },
+  "devDependencies": {
+    "oxlint": "catalog:",
+    "prettier": "catalog:",
+    "typescript": "catalog:"
+  }
+}
