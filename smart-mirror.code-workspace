@@ -1,0 +1,32 @@
+{
+    "folders": [
+        {
+            "name": "/ (root)",
+            "path": ".",
+        },
+
+        // Apps
+        {
+            "name": "/apps/backend",
+            "path": "apps/backend",
+        },
+        {
+            "name": "/apps/frontend",
+            "path": "apps/frontend",
+        },
+
+        // Libs
+        {
+            "name": "/libs/api",
+            "path": "libs/api",
+        },
+        {
+            "name": "/libs/common",
+            "path": "libs/common",
+        },
+        {
+            "name": "/libs/tsconfig",
+            "path": "libs/tsconfig",
+        },
+    ]
+}
