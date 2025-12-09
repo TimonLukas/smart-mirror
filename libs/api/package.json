@@ -1,28 +1,28 @@
 {
-  "name": "@smart-mirror/backend",
+  "name": "@smart-mirror/lib-api",
   "version": "0.0.0",
-  "main": "src/app.ts",
   "private": true,
   "type": "module",
   "scripts": {
-    "start": "tsx src/app.ts",
     "format:check": "prettier --check src",
     "format:fix": "prettier --check --write src"
   },
-  "packageManager": "pnpm@10.19.0",
   "dependencies": {
-    "@trpc/server": "catalog:trpc"
+    "@trpc/server": "catalog:trpc",
+    "zod": "catalog:"
   },
   "devDependencies": {
     "@prettier/plugin-oxc": "catalog:",
-    "@smart-mirror/lib-api": "workspace:",
     "@smart-mirror/lib-common": "workspace:",
     "@smart-mirror/lib-tsconfig": "workspace:",
     "@tsconfig/node24": "catalog:",
-    "@types/node": "catalog:",
     "oxlint": "catalog:",
     "prettier": "catalog:",
-    "tsx": "catalog:",
-    "typescript": "catalog:"
+    "typescript": "catalog:",
+    "vitest": "catalog:"
+  },
+  "exports": {
+    ".": "./src/index.ts",
+    "./*": "./src/*.ts"
   }
 }

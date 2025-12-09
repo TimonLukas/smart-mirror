@@ -7,14 +7,20 @@
     "format:check": "prettier --check src",
     "format:fix": "prettier --check --write src"
   },
+  "dependencies": {
+    "consola": "catalog:"
+  },
   "devDependencies": {
     "@prettier/plugin-oxc": "catalog:",
+    "@smart-mirror/lib-tsconfig": "workspace:",
+    "@tsconfig/node24": "catalog:",
     "oxlint": "catalog:",
     "prettier": "catalog:",
     "typescript": "catalog:",
     "vitest": "catalog:"
   },
   "exports": {
+    ".": "./src/index.ts",
     "./*": "./src/*.ts"
   }
 }

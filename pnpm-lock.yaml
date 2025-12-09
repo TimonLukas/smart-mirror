@@ -18,6 +18,9 @@ catalogs:
     '@vitest/eslint-plugin':
       specifier: ^1.5.0
       version: 1.5.2
+    consola:
+      specifier: ^3.4.2
+      version: 3.4.2
     eslint:
       specifier: ^9.39.1
       version: 9.39.1
@@ -45,6 +48,13 @@ catalogs:
     vitest:
       specifier: ^4.0.14
       version: 4.0.15
+    zod:
+      specifier: ^4.1.13
+      version: 4.1.13
+  trpc:
+    '@trpc/server':
+      specifier: ^11.7.2
+      version: 11.7.2
 
 importers:
 
@@ -64,13 +74,23 @@ importers:
         version: 5.9.3
 
   apps/backend:
+    dependencies:
+      '@trpc/server':
+        specifier: catalog:trpc
+        version: 11.7.2(typescript@5.9.3)
     devDependencies:
       '@prettier/plugin-oxc':
         specifier: 'catalog:'
         version: 0.0.5
+      '@smart-mirror/lib-api':
+        specifier: 'workspace:'
+        version: link:../../libs/api
       '@smart-mirror/lib-common':
         specifier: 'workspace:'
         version: link:../../libs/common
+      '@smart-mirror/lib-tsconfig':
+        specifier: 'workspace:'
+        version: link:../../libs/tsconfig
       '@tsconfig/node24':
         specifier: 'catalog:'
         version: 24.0.3
@@ -172,14 +192,69 @@ importers:
         specifier: ^3.1.5
         version: 3.1.8(typescript@5.9.3)
 
-  libs/common:
+  libs/api:
+    dependencies:
+      '@trpc/server':
+        specifier: catalog:trpc
+        version: 11.7.2(typescript@5.9.3)
+      zod:
+        specifier: 'catalog:'
+        version: 4.1.13
     devDependencies:
+      '@prettier/plugin-oxc':
+        specifier: 'catalog:'
+        version: 0.0.5
+      '@smart-mirror/lib-common':
+        specifier: 'workspace:'
+        version: link:../common
+      '@smart-mirror/lib-tsconfig':
+        specifier: 'workspace:'
+        version: link:../tsconfig
+      '@tsconfig/node24':
+        specifier: 'catalog:'
+        version: 24.0.3
+      oxlint:
+        specifier: 'catalog:'
+        version: 1.29.0
+      prettier:
+        specifier: 'catalog:'
+        version: 3.7.4
       typescript:
         specifier: 'catalog:'
         version: 5.9.3
       vitest:
         specifier: 'catalog:'
         version: 4.0.15(@types/node@24.10.2)(jiti@2.6.1)(jsdom@27.3.0(postcss@8.5.6))(tsx@4.21.0)
+
+  libs/common:
+    dependencies:
+      consola:
+        specifier: 'catalog:'
+        version: 3.4.2
+    devDependencies:
+      '@prettier/plugin-oxc':
+        specifier: 'catalog:'
+        version: 0.0.5
+      '@smart-mirror/lib-tsconfig':
+        specifier: 'workspace:'
+        version: link:../tsconfig
+      '@tsconfig/node24':
+        specifier: 'catalog:'
+        version: 24.0.3
+      oxlint:
+        specifier: 'catalog:'
+        version: 1.29.0
+      prettier:
+        specifier: 'catalog:'
+        version: 3.7.4
+      typescript:
+        specifier: 'catalog:'
+        version: 5.9.3
+      vitest:
+        specifier: 'catalog:'
+        version: 4.0.15(@types/node@24.10.2)(jiti@2.6.1)(jsdom@27.3.0(postcss@8.5.6))(tsx@4.21.0)
+
+  libs/tsconfig: {}
 
 packages:
 
@@ -1045,6 +1120,11 @@ packages:
   '@standard-schema/spec@1.0.0':
     resolution: {integrity: sha512-m2bOd0f2RT9k8QJx1JN85cZYyH1RqFBdlwtkSlf4tBDYLCiiZnv1fIIwacK6cqwXavOydf0NPToMQgpKq+dVlA==}
 
+  '@trpc/server@11.7.2':
+    resolution: {integrity: sha512-AgB26PXY69sckherIhCacKLY49rxE2XP5h38vr/KMZTbLCL1p8IuIoKPjALTcugC2kbyQ7Lbqo2JDVfRSmPmfQ==}
+    peerDependencies:
+      typescript: '>=5.7.2'
+
   '@tsconfig/node24@24.0.3':
     resolution: {integrity: sha512-vcERKtKQKHgzt/vfS3Gjasd8SUI2a0WZXpgJURdJsMySpS5+ctgbPfuLj2z/W+w4lAfTWxoN4upKfu2WzIRYnw==}
 
@@ -1410,6 +1490,10 @@ packages:
 
   config-chain@1.1.13:
     resolution: {integrity: sha512-qj+f8APARXHrM0hraqXYb2/bOVSV4PvJQlNZ/DVj0QrmNM2q2euizkeuVckQ57J+W0mRH6Hvi+k50M4Jul2VRQ==}
+
+  consola@3.4.2:
+    resolution: {integrity: sha512-5IKcdX0nnYavi6G7TtOhwkYzyjfJlatbjMjuLSfE2kYT5pMDOilZ4OvMhi637CcDICTmz3wARPoyhqyX1Y+XvA==}
+    engines: {node: ^14.18.0 || >=16.10.0}
 
   convert-source-map@2.0.0:
     resolution: {integrity: sha512-Kvp459HrV2FEJ1CAsi1Ku+MY3kasH19TFykTz2xWmMeq6bk2NU3XXvfJ+Q61m0xktWwt+1HSYf3JZsTms3aRJg==}
@@ -2486,6 +2570,9 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
 
+  zod@4.1.13:
+    resolution: {integrity: sha512-AvvthqfqrAhNH9dnfmrfKzX5upOdjUVJYFqNSlkmGf64gRaTzlPwz99IHYnVs28qYAybvAlBV+H7pn0saFY4Ig==}
+
 snapshots:
 
   '@acemir/cssom@0.9.28': {}
@@ -3155,6 +3242,10 @@ snapshots:
 
   '@standard-schema/spec@1.0.0': {}
 
+  '@trpc/server@11.7.2(typescript@5.9.3)':
+    dependencies:
+      typescript: 5.9.3
+
   '@tsconfig/node24@24.0.3': {}
 
   '@tybys/wasm-util@0.10.1':
@@ -3612,6 +3703,8 @@ snapshots:
     dependencies:
       ini: 1.3.8
       proto-list: 1.2.4
+
+  consola@3.4.2: {}
 
   convert-source-map@2.0.0: {}
 
@@ -4685,3 +4778,5 @@ snapshots:
   yallist@3.1.1: {}
 
   yocto-queue@0.1.0: {}
+
+  zod@4.1.13: {}

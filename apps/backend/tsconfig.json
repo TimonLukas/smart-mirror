@@ -1,0 +1,4 @@
+{
+    "extends": "@smart-mirror/lib-tsconfig/tsconfig.node.json",
+    "include": ["src/**/*.ts"],
+}
