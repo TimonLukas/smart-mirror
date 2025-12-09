@@ -1,7 +1,7 @@
 <template>
   <div class="app dark bg-black text-white w-dvw h-dvh p-4">
     <div class="w-full h-full relative">
-      <AppScaler>
+      <AppScaler :scale="1.25">
         <AppTabs />
       </AppScaler>
     </div>

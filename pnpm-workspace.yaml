@@ -3,23 +3,24 @@ packages:
   - libs/*
 
 catalog:
-  "@prettier/plugin-oxc": ^0.0.5
-  "@tsconfig/node24": ^24.0.3
-  "@types/node": ^24.10.1
-  "@vitest/eslint-plugin": ^1.5.0
-  "consola": ^3.4.2
-  "eslint": ^9.39.1
-  "eslint-plugin-oxlint": "~1.29.0"
-  "jiti": ^2.6.1
-  "npm-run-all2": ^8.0.4
-  "oxlint": "~1.29.0"
-  "prettier": ^3.6.2
-  "tsx": ^4.2.0
-  "typescript": ^5.9.0
-  "vitest": ^4.0.14
-  "zod": ^4.1.13
+  '@prettier/plugin-oxc': ^0.0.5
+  '@tsconfig/node24': ^24.0.3
+  '@types/node': ^24.10.1
+  '@vitest/eslint-plugin': ^1.5.0
+  'consola': ^3.4.2
+  'date-fns': ^4.1.0
+  'eslint': ^9.39.1
+  'eslint-plugin-oxlint': '~1.29.0'
+  'jiti': ^2.6.1
+  'npm-run-all2': ^8.0.4
+  'oxlint': '~1.29.0'
+  'prettier': ^3.6.2
+  'tsx': ^4.2.0
+  'typescript': ^5.9.0
+  'vitest': ^4.0.14
+  'zod': ^4.1.13
 
 catalogs:
   trpc:
-    "@trpc/client": ^11.7.2
-    "@trpc/server": ^11.7.2
+    '@trpc/client': ^11.7.2
+    '@trpc/server': ^11.7.2

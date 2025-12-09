@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "consola": "catalog:",
+    "date-fns": "catalog:",
     "temporal-polyfill": "^0.3.0"
   },
   "devDependencies": {

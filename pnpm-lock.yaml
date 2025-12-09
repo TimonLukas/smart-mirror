@@ -121,6 +121,9 @@ importers:
 
   apps/frontend:
     dependencies:
+      '@fontsource/inter':
+        specifier: ^5.2.8
+        version: 5.2.8
       '@tailwindcss/vite':
         specifier: ^4.1.17
         version: 4.1.17(vite@7.2.7(@types/node@24.10.2)(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.21.0))
@@ -136,6 +139,12 @@ importers:
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
+      colorjs.io:
+        specifier: ^0.5.2
+        version: 0.5.2
+      date-fns:
+        specifier: ^4.1.0
+        version: 4.1.0
       lucide-vue-next:
         specifier: ^0.556.0
         version: 0.556.0(vue@3.5.25(typescript@5.9.3))
@@ -279,6 +288,9 @@ importers:
       consola:
         specifier: 'catalog:'
         version: 3.4.2
+      date-fns:
+        specifier: ^4.1.0
+        version: 4.1.0
       temporal-polyfill:
         specifier: ^0.3.0
         version: 0.3.0
@@ -865,6 +877,9 @@ packages:
 
   '@floating-ui/vue@1.1.9':
     resolution: {integrity: sha512-BfNqNW6KA83Nexspgb9DZuz578R7HT8MZw1CfK9I6Ah4QReNWEJsXWHN+SdmOVLNGmTPDi+fDT535Df5PzMLbQ==}
+
+  '@fontsource/inter@5.2.8':
+    resolution: {integrity: sha512-P6r5WnJoKiNVV+zvW2xM13gNdFhAEpQ9dQJHt3naLvfg+LkF2ldgSLiF4T41lf1SQCM9QmkqPTn4TH568IRagg==}
 
   '@humanfs/core@0.19.1':
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
@@ -1700,6 +1715,9 @@ packages:
   color-name@1.1.4:
     resolution: {integrity: sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==}
 
+  colorjs.io@0.5.2:
+    resolution: {integrity: sha512-twmVoizEW7ylZSN32OgKdXRmo1qg+wT5/6C3xu5b9QsWzSFAhHLn2xd8ro0diCsKfCj1RdaTP/nrcW+vAoQPIw==}
+
   commander@10.0.1:
     resolution: {integrity: sha512-y4Mg2tXshplEbSGzx7amzPwKKOCGuoSRP/CjEdwwk0FOGlUbq6lKuoyDZTNZkmxHdJtp54hdfY/JUrdL7Xfdug==}
     engines: {node: '>=14'}
@@ -1748,6 +1766,9 @@ packages:
   data-urls@6.0.0:
     resolution: {integrity: sha512-BnBS08aLUM+DKamupXs3w2tJJoqU+AkaE/+6vQxi/G/DPmIZFJJp9Dkb1kM03AZx8ADehDUZgsNxju3mPXZYIA==}
     engines: {node: '>=20'}
+
+  date-fns@4.1.0:
+    resolution: {integrity: sha512-Ukq0owbQXxa/U3EGtsdVBkR1w7KOQ5gIBqdH2hkvknzZPYvBxb/aa6E8L7tmjFtkwZBu3UXBbjIgPo/Ez4xaNg==}
 
   debug@4.4.3:
     resolution: {integrity: sha512-RGwwWnwQvkVfavKVt22FGLw+xYSdzARwm0ru6DhTVA3umU5hZc28V3kO4stgYryrTlLpuvgI9GiijltAjNbcqA==}
@@ -3431,6 +3452,8 @@ snapshots:
       - '@vue/composition-api'
       - vue
 
+  '@fontsource/inter@5.2.8': {}
+
   '@humanfs/core@0.19.1': {}
 
   '@humanfs/node@0.16.7':
@@ -4240,6 +4263,8 @@ snapshots:
 
   color-name@1.1.4: {}
 
+  colorjs.io@0.5.2: {}
+
   commander@10.0.1: {}
 
   concat-map@0.0.1: {}
@@ -4289,6 +4314,8 @@ snapshots:
     dependencies:
       whatwg-mimetype: 4.0.0
       whatwg-url: 15.1.0
+
+  date-fns@4.1.0: {}
 
   debug@4.4.3:
     dependencies:
