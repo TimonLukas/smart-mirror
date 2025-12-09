@@ -68,6 +68,9 @@ importers:
       '@prettier/plugin-oxc':
         specifier: 'catalog:'
         version: 0.0.5
+      '@smart-mirror/lib-common':
+        specifier: 'workspace:'
+        version: link:../../libs/common
       '@tsconfig/node24':
         specifier: 'catalog:'
         version: 24.0.3
@@ -99,6 +102,9 @@ importers:
       '@prettier/plugin-oxc':
         specifier: 'catalog:'
         version: 0.0.5
+      '@smart-mirror/lib-common':
+        specifier: 'workspace:'
+        version: link:../../libs/common
       '@tsconfig/node24':
         specifier: 'catalog:'
         version: 24.0.3
@@ -165,6 +171,15 @@ importers:
       vue-tsc:
         specifier: ^3.1.5
         version: 3.1.8(typescript@5.9.3)
+
+  libs/common:
+    devDependencies:
+      typescript:
+        specifier: 'catalog:'
+        version: 5.9.3
+      vitest:
+        specifier: 'catalog:'
+        version: 4.0.15(@types/node@24.10.2)(jiti@2.6.1)(jsdom@27.3.0(postcss@8.5.6))(tsx@4.21.0)
 
 packages:
 
