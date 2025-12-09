@@ -21,4 +21,5 @@ catalog:
 
 catalogs:
   trpc:
+    "@trpc/client": ^11.7.2
     "@trpc/server": ^11.7.2

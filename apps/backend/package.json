@@ -11,7 +11,8 @@
   },
   "packageManager": "pnpm@10.19.0",
   "dependencies": {
-    "@trpc/server": "catalog:trpc"
+    "@trpc/server": "catalog:trpc",
+    "cors": "^2.8.5"
   },
   "devDependencies": {
     "@prettier/plugin-oxc": "catalog:",
@@ -19,6 +20,7 @@
     "@smart-mirror/lib-common": "workspace:",
     "@smart-mirror/lib-tsconfig": "workspace:",
     "@tsconfig/node24": "catalog:",
+    "@types/cors": "^2.8.19",
     "@types/node": "catalog:",
     "oxlint": "catalog:",
     "prettier": "catalog:",

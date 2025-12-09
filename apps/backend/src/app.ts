@@ -1,12 +1,13 @@
 import { createHTTPServer } from '@trpc/server/adapters/standalone'
 import { appRouter } from '@smart-mirror/lib-api/server'
-import { logger } from '@smart-mirror/lib-common'
+import { firstNotNan, logger } from '@smart-mirror/lib-common'
+import cors from 'cors'
 
 const server = createHTTPServer({
+  middleware: cors(),
   router: appRouter,
 })
 
-const overridePort = Number(process.env.PORT)
-const port = Number.isNaN(overridePort) ? 3000 : overridePort
+const port = firstNotNan(Number(process.env.PORT), 3000)
 logger.info('Server is listening on port:', port)
 server.listen(port)
