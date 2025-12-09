@@ -66,6 +66,27 @@ export const useNavigationStore = defineStore('navigation', () => {
     currentSubtab.value = allSubtabs[nextIndex]!
   }
 
+  function navigate(rootTabId: string, subTabId?: string) {
+    const path = [rootTabId]
+    if (typeof subTabId === 'string') {
+      path.push(subTabId)
+    }
+
+    const index = findSubtabIndex(path)
+    if (index !== -1) {
+      currentSubtab.value = allSubtabs[index]!
+      return
+    }
+
+    // Use first subtab for this rootTabId
+    if (typeof subTabId === 'undefined') {
+      const firstIndex = allSubtabs.findIndex((t) => t.length > 1 && t[0] === rootTabId)
+      if (firstIndex !== -1) {
+        currentSubtab.value = allSubtabs[firstIndex]!
+      }
+    }
+  }
+
   const socket = new WebSocket(import.meta.env.VITE_WEBSOCKET_ENDPOINT)
   socket.addEventListener('open', () => {
     const interval = setInterval(() => {
@@ -107,5 +128,5 @@ export const useNavigationStore = defineStore('navigation', () => {
     })
   })
 
-  return { currentSubtab, previous, next }
+  return { currentSubtab, previous, next, navigate }
 })

@@ -1,5 +1,5 @@
 <template>
-  <Tabs v-model="currentTab" class="flex flex-col items-center w-full h-full">
+  <Tabs v-model="model" class="flex flex-col items-center w-full h-full">
     <TabsList class="text-md p-1">
       <TabsTrigger v-for="tab in APP_TABS" :key="tab.id" :value="tab.id">{{
         tab.label
@@ -20,5 +20,11 @@ import WeatherTabs from './weather/WeatherTabs.vue'
 import { APP_TABS, useNavigationStore } from '@/stores/navigation'
 
 const navigationStore = useNavigationStore()
-const currentTab = computed(() => navigationStore.currentSubtab[0])
+
+const model = computed({
+  get: () => navigationStore.currentSubtab[0],
+  set: (tabId: string) => {
+    navigationStore.navigate(tabId)
+  },
+})
 </script>

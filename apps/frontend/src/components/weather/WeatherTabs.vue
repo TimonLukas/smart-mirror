@@ -1,5 +1,5 @@
 <template>
-  <Tabs v-model="currentTab" class="flex flex-col items-center justify-center">
+  <Tabs v-model="model" class="flex flex-col items-center justify-center">
     <TabsList class="mb-2 bg-transparent">
       <TabsTrigger
         v-for="location in weatherStore.locations"
@@ -20,15 +20,22 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs'
 import { useWeatherStore } from '@/stores/weather'
 import WeatherDisplay from './WeatherDisplay.vue'
 import { useNavigationStore } from '@/stores/navigation'
+import { assert } from '@smart-mirror/lib-common'
 
 const navigationStore = useNavigationStore()
 const weatherStore = useWeatherStore()
 
-const currentTab = computed(() => {
-  if (navigationStore.currentSubtab[0] === 'weather') {
-    return navigationStore.currentSubtab[1]
-  }
+const model = computed({
+  get: () => {
+    if (navigationStore.currentSubtab[0] === 'weather') {
+      return navigationStore.currentSubtab[1]!
+    }
 
-  return weatherStore.locations[0]?.id
+    assert.array.hasMinLength(1)(weatherStore.locations, 'weatherStore.locations')
+    return weatherStore.locations[0]!.id
+  },
+  set: (locationId) => {
+    navigationStore.navigate('weather', locationId)
+  },
 })
 </script>
